@@ -10,20 +10,18 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-10 offset-1">
-					<h3 class="text-center">View All Student Data</h3>
+					<h3 class="text-center">View User Data</h3>
 					<hr>
 					<table class="table table-bordered">
 						<tr>
-							<th>Serial</th>
-							<th>Name</th>
-							<th>Roll Number</th>
-							<th>Regi Number</th>
-							<th>Semester</th>
-							<th>Department</th>
-							<th>Actioin</th>
+							<th>ID</th>
+							<th>User Name</th>
+							<th>Email</th>
+							<th>Passwords</th>
+							<th>Types</th>
 						</tr>
 						<?php 
-							$sql = "SELECT * FROM students";
+							$sql = "SELECT * FROM fromlogininformation";
 							$view = $connection->query($sql);
 						?>
 
@@ -34,11 +32,10 @@
 						<?php $i++;?>
 						<tr>
 							<td><?php echo $i;?></td>
-							<td><?php echo $row->name;?></td>
-							<td><?php echo $row->roll;?></td>
-							<td><?php echo $row->regi;?></td>
-							<td><?php echo $row->semester;?></td>
-							<td><?php echo $row->department;?></td>
+							<td><?php echo $row->full_name;?></td>
+							<td><?php echo $row->email;?></td>
+							<td><?php echo $row->passwords;?></td>
+							<td><?php echo $row->types;?></td>
 							<td>
 								<a href="edit.php?myid=<?php echo $row->id;?>">Edit</a> | 
 								<a onclick="return myDelete()"  href="delete.php?st_id=<?php echo $row->id;?>">Delete</a>
@@ -50,7 +47,7 @@
 
 					<?php if(isset($_REQUEST['delete_success'])) :?>
 					<div class="alert alert-warning" role="alert">
-					  Deleted Student Data.
+					  Deleted User Data.
 					</div>
 					<?php endif;?>
 

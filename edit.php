@@ -6,14 +6,14 @@
 
 	if(isset($_POST['update_data'])){
 
-		$new_name = $_POST['new_name'];
-		$new_roll = $_POST['new_roll'];
-		$new_regi = $_POST['new_regi'];
-		$new_semester = $_POST['new_semester'];
-		$new_department = $_POST['new_department'];
+		$new_full_name = $_POST['new_full_name'];
+		$new_email = $_POST['new_email'];
+		$new_passwords = $_POST['new_passwords'];
+		$new_types = $_POST['new_types'];
+		$new_types = $_POST['new_types'];
 
 
-		$data = $connection->query("UPDATE students  SET name='$new_name',roll='$new_roll',regi='$new_regi',semester='$new_semester',department='$new_department' WHERE id=$st_id");
+		$data = $connection->query("UPDATE fromlogininformation  SET full_name='$new_full_name',email='$new_email',passwords='$new_passwords',types='$new_types' WHERE id=$st_id");
 
 
 		$success = "Student Data Update Success!";
@@ -34,29 +34,26 @@
 
 					<?php 
 
-					$data=$connection->query("SELECT * FROM students WHERE id=$st_id");
+					$data=$connection->query("SELECT * FROM fromlogininformation WHERE id=$st_id");
 
 					while($content=$data->fetch_object()){
-						$name = $content->name;
-						$roll = $content->roll;
-						$registration = $content->regi;
-						$semester = $content->semester;
-						$dep = $content->department;
+						$full_name = $content->full_name;
+						$email = $content->email;
+						$passwords = $content->passwords;
+						$types = $content->types;
 					}
 
 					?>
 
 
 					<form action="" method="POST">
-							<input type="text" name="new_name" placeholder="Student Name" class="form-control" id="" value="<?php echo $name;?>" required>
+							<input type="text" name="new_full_name" placeholder="New User Name" class="form-control" id="" value="<?php echo $full_name;?>" required>
 
-							<input type="text" name="new_roll" placeholder="Roll Number" class="form-control" id="" value="<?php echo $roll;?>" required>
+							<input type="text" name="new_email" placeholder="New email" class="form-control" id="" value="<?php echo $email;?>" required>
 
-							<input type="text" name="new_regi" placeholder="Registration Number" class="form-control" value="<?php echo $registration;?>" required>
+							<input type="text" name="new_passwords" placeholder="New Passwords" class="form-control" value="<?php echo $passwords;?>" required>
 
-							<input type="text" name="new_semester" placeholder="Semeter" class="form-control" value="<?php echo $semester;?>">
-
-							<input type="text" name="new_department" placeholder="Department" class="form-control" value="<?php echo $dep;?>">
+							<input type="text" name="new_types" placeholder="New Types" class="form-control" value="<?php echo $types;?>">
 
 							<input type="submit" name="update_data" value="Update New Data" class="btn btn-outline-primary" id="">
 
