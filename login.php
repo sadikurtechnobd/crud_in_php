@@ -16,25 +16,21 @@
 		}else{
 
 			session_start();
-			$_SESSION['username'] = "ASHIK";
+			$_SESSION['username'] = "sadikur";
 
-			header('location:index.php');
+			header('location:view.php');
 		}
 
 	}
 
  ?>
 
-
-
-
-
 	<div class="main-area" style="margin:50px 0;">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-6 offset-3">
 					<div class="form-area">
-						<h3 class="text-center">Login</h3>
+						<h3 class="text-center">Log In</h3>
 						<hr>
 						<form action="" method="POST">
 							<input type="text" name="user" placeholder="Username" class="form-control" id="" required>
