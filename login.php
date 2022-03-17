@@ -4,7 +4,7 @@
 <?php 
 	
 	define('USERNAME','sadikur');
-	define('PASSWORD','1234');
+	define('PASSWORD','123456');
 
 
 	if(isset($_POST['login'])){

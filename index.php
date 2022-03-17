@@ -38,11 +38,13 @@
 						<form action="" method="POST">
 							<input type="text" name="full_name" placeholder="User Name" class="form-control" id="" required>
 
+							<input type="text" name="types" placeholder="Roll Number" class="form-control" id="">
+
 							<input type="text" name="email" placeholder="Email" class="form-control" id="" required>
 
 							<input type="text" name="passwords" placeholder="Passwords" class="form-control" id="" required>
 
-							<input type="text" name="types" placeholder="Type" class="form-control" id="">
+							
 
 							<input type="submit" name="insert" value="Insert New Data" class="btn btn-outline-primary" id="">
 
